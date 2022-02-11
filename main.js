@@ -33,12 +33,26 @@ const pAequorFactory = (number, DNA) => {
     // two objects and in the same locations
     compareDNA (pAeuqor) {
       let commonBases = 0;
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < this.DNA.length; i++) {
         if (this.DNA[i] === pAeuqor.DNA[i]) {
           commonBases++;
         }
       };
       console.log(`specimen #1 and specimen #2 have ${Math.floor((commonBases / 15) * 100)}% DNA in common.`);
+    },
+    // returns true if the object’s .dna array contains at least 
+    // 60% 'C' or 'G' bases
+    willLikelySurvive () {
+      let luckyBases = 0;
+      for (let i = 0; i < this.DNA.length; i++) {
+        if(this.DNA[i] === 'C' || this.DNA[i] === 'G')
+          luckyBases++;
+      };
+      
+      if(Math.floor((luckyBases / 15) * 100) > 60)
+        return true;
+      else
+        return false;
     }
   }
 }
