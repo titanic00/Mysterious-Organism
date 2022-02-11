@@ -56,3 +56,15 @@ const pAequorFactory = (number, DNA) => {
     }
   }
 }
+
+// create 30 instances of pAequor 
+// that can survive in their natural environment
+let viableOrganisms = [];
+let numberOfOrganism = 1;
+while(viableOrganisms.length < 30) {
+  let newOrganism = pAequorFactory(numberOfOrganism, mockUpStrand());
+  if(newOrganism.willLikelySurvive()) {
+    numberOfOrganism++;
+    viableOrganisms.push(newOrganism);
+  }
+};
