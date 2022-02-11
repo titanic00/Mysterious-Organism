@@ -13,16 +13,21 @@ const mockUpStrand = () => {
   return newStrand;
 };
 
-//
+// factory function
 const pAequorFactory = (number, DNA) => {
-  return {
-    specimenNum,
+    
+    return {
+    specimenNum: number,
     DNA,
+    // selects a base in the object’s dna property and 
+    // changing the current base to a different base
     mutate () {
-      let currentDNA = this.DNA;
-      while(currentDNA === this.DNA) {
-        this.DNA = treturnRandBase(Math.floor(Math.random() * 4));
-      }
+        let mutation = returnRandBase();
+        const placeInDNA = Math.floor(Math.random() * 15);
+        while(mutation === this.DNA[placeInDNA]) {
+            mutation = returnRandBase();
+        };
+        this.DNA[placeInDNA] = mutation;
     }
   }
 }
