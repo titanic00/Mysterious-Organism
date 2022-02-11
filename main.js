@@ -28,6 +28,17 @@ const pAequorFactory = (number, DNA) => {
             mutation = returnRandBase();
         };
         this.DNA[placeInDNA] = mutation;
+    },
+    // compute how many bases are identical between 
+    // two objects and in the same locations
+    compareDNA (pAeuqor) {
+      let commonBases = 0;
+      for (let i = 0; i < 15; i++) {
+        if (this.DNA[i] === pAeuqor.DNA[i]) {
+          commonBases++;
+        }
+      };
+      console.log(`specimen #1 and specimen #2 have ${Math.floor((commonBases / 15) * 100)}% DNA in common.`);
     }
   }
 }
