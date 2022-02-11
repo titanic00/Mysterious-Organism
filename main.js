@@ -13,10 +13,16 @@ const mockUpStrand = () => {
   return newStrand;
 };
 
-
-
-
-
-
-
-
+//
+const pAequorFactory = (number, DNA) => {
+  return {
+    specimenNum,
+    DNA,
+    mutate () {
+      let currentDNA = this.DNA;
+      while(currentDNA === this.DNA) {
+        this.DNA = treturnRandBase(Math.floor(Math.random() * 4));
+      }
+    }
+  }
+}
